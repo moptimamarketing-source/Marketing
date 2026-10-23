@@ -54,6 +54,27 @@
   }
   seedDemo();
 
+  function showOtp(phone, code) {
+    let box = document.getElementById('preview-otp');
+    if (!box) {
+      box = document.createElement('div');
+      box.id = 'preview-otp';
+      box.setAttribute('role', 'status');
+      box.style.cssText = 'position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:60;max-width:92vw;' +
+        'background:#111827;color:#fff;border:2px solid #FFB800;border-radius:12px;padding:10px 16px;' +
+        'font:14px/1.4 system-ui,sans-serif;text-align:center;box-shadow:0 8px 24px #0006';
+      document.body.appendChild(box);
+    }
+    box.innerHTML = '';
+    const label = document.createElement('div');
+    label.style.cssText = 'font-size:11px;opacity:.7';
+    label.textContent = `PREVIEW · OTP WhatsApp untuk ${phone}`;
+    const num = document.createElement('div');
+    num.style.cssText = 'font-size:26px;font-weight:800;letter-spacing:.3em;color:#FFB800';
+    num.textContent = code;
+    box.append(label, num);
+  }
+
   const referrerByCode = (code) => Object.values(db.referrers).find((r) => r.code === code);
 
   const routes = {
@@ -67,8 +88,8 @@
       const code = String(Math.floor(Math.random() * 1000000)).padStart(6, '0');
       db.otps[phone] = { code, attempts: 0, createdAt: Date.now(), expiresAt: Date.now() + 300000 };
       save();
-      // No WhatsApp in preview: show the code instead.
-      setTimeout(() => alert(`[PREVIEW] OTP WhatsApp untuk ${formatPhone(phone)}:\n\n${code}`), 50);
+      // No WhatsApp in preview: show the code on screen instead.
+      showOtp(formatPhone(phone), code);
       return { ok: true, phone: formatPhone(phone), isNew: !db.referrers[phone], expiresIn: 300 };
     },
 

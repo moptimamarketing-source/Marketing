@@ -13,7 +13,7 @@ Tiada server, tiada Node diperlukan untuk membukanya.
 
 - Klik **Masuk Dashboard** atau **Daftar sebagai Rujukan**.
 - Guna nombor demo **012-3456789** untuk lihat dashboard berisi 3 rujukan contoh.
-- OTP **tidak dihantar ke WhatsApp**. Ia keluar dalam kotak amaran (alert) di skrin.
+- OTP **tidak dihantar ke WhatsApp**. Ia dipaparkan dalam kotak kuning-hitam di atas skrin.
 - Nombor lain: isi nama, dan anda dapat kod rujukan baru (dashboard kosong).
 - Halaman jemputan: `daftar.html?ref=MO-6789-DEMO` (buka dari folder yang sama).
 - Butang **PREVIEW · reset data** di kiri bawah memadam semua data demo.
