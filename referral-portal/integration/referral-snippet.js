@@ -1,4 +1,4 @@
-/* Letak dalam borang pendaftaran (pcs2.daftarmindaoptima.com) sebelum </body>.
+/* Letak dalam borang pendaftaran (daftarmindaoptima.com/f/kelas-membaca-minda-optima-fizikal) sebelum </body>.
  * 1) Menyimpan ?ref= dan ?vid= dari pautan supaya tak hilang bila halaman refresh/berpindah.
  * 2) MOReferral.record({ phone, name }) dipanggil SELEPAS pendaftaran berjaya. */
 (() => {

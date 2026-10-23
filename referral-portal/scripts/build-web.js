@@ -36,6 +36,7 @@ const pages = {
     edits: [
       ['<script src="/js/common.js"></script>', SCRIPTS, true],
       ['window.location.href = url;', 'MO.goRegister(url);', true],
+      ['href="https://pcs2.daftarmindaoptima.com"', 'href="https://daftarmindaoptima.com/f/kelas-membaca-minda-optima-fizikal"', true],
     ],
   },
   'login.html': { from: extra, edits: [['<script src="/js/common.js"></script>', SCRIPTS, true]] },
